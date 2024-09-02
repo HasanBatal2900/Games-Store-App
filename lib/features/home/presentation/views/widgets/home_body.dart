@@ -3,7 +3,6 @@ import 'package:game_store/core/constants/padding.dart';
 import 'package:game_store/core/utils/styles.dart';
 import 'package:game_store/features/home/domain/entities/device.dart';
 import 'package:game_store/features/home/presentation/views/widgets/device_card.dart';
-import 'package:gap/gap.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -21,9 +20,19 @@ class HomeViewBody extends StatelessWidget {
           ),
           Expanded(
             child: ListView.separated(
-                separatorBuilder: (context, index) => const Gap(10),
+                separatorBuilder: (context, index) => SizedBox(
+                      child: Divider(
+                        color: Colors.grey.shade300,
+                      ),
+                    ),
                 itemCount: 10,
-                itemBuilder: (context, index) =>  DeviceCard(device: DeviceEntity(name: "pc1", priceHour: 5600, type: "pc", status: false),)),
+                itemBuilder: (context, index) => DeviceCard(
+                      device: DeviceEntity(
+                          name: "pc1",
+                          priceHour: 5600,
+                          type: "pc",
+                          status: false),
+                    )),
           ),
         ],
       ),

@@ -16,27 +16,41 @@ class DeviceCard extends StatelessWidget {
     return Slidable(
       key: UniqueKey(),
       closeOnScroll: true,
-      dragStartBehavior: DragStartBehavior.start,
-      endActionPane: const ActionPane(
+      dragStartBehavior: DragStartBehavior.down,
+      endActionPane: ActionPane(
         extentRatio: 0.25,
-        motion: Icon(Icons.deblur),
-        children: [],
+        motion: Container(
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 255, 208, 207),
+              borderRadius: BorderRadius.circular(12.0),
+            ),
+            child: InkWell(
+              onTap: () {},
+              child: const Icon(
+                Icons.delete_outline_rounded,
+                color: Colors.red,
+              ),
+            )),
+        children: const [],
       ),
-      startActionPane: const ActionPane(
-        extentRatio: 0.25,
-        motion: Icon(Icons.deblur),
-        children: [],
+      startActionPane: ActionPane(
+        extentRatio: 0.24,
+        motion: Container(
+          decoration: BoxDecoration(
+            color: Colors.amber.withOpacity(0.2),
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          child: const Icon(
+            Icons.edit,
+            color: Colors.amber,
+          ),
+        ),
+        children: const [],
       ),
       direction: Axis.horizontal,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 6),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10.0),
-          border: Border.all(
-            color: Colors.grey.shade400.withOpacity(0.5),
-          ),
-        ),
+        color: Colors.white,
         margin: const EdgeInsets.symmetric(horizontal: kPaddingHorizontal * .5),
         width: MediaQuery.sizeOf(context).width,
         height: MediaQuery.sizeOf(context).height * .12,
