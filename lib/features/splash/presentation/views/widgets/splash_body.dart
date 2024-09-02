@@ -20,21 +20,23 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   void initState() {
     super.initState();
-    initialAudio();
     playAudio();
 
     player.onPlayerComplete.listen((event) {
-      GoRouter.of(context).push(AppRouter.kHomeViewRoute);
+      GoRouter.of(context).go(AppRouter.kHomeViewRoute);
     });
   }
 
-  Future<void> initialAudio() async {
+  Future<void> playAudio() async {
     player = AudioPlayer();
-    await player.setSource(AssetSource(kAudioPath));
+
+    await player.play(AssetSource(kAudioPath));
   }
 
-  Future<void> playAudio() async {
-    await player.play(AssetSource(kAudioPath));
+  @override
+  void dispose() {
+    player.dispose();
+    super.dispose();
   }
 
   @override
