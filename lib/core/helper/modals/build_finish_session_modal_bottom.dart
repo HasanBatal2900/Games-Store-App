@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:game_store/core/constants/padding.dart';
+import 'package:game_store/core/helper/modals/build_quick_alret.dart';
 import 'package:game_store/core/widgets/submit_btn.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:quickalert/quickalert.dart';
 
 buildFinishSessionModalBottomSheet(BuildContext context,
     {required String name, required TimeOfDay startingTime}) {
@@ -55,8 +57,13 @@ buildFinishSessionModalBottomSheet(BuildContext context,
                   const Gap(20),
                   Expanded(
                     child: SubmitButton(
-                      onPressed: () {},
-                      title: "Save",
+                      onPressed: () {
+                        GoRouter.of(context).pop();
+                        buildQuickAlret(context, QuickAlertType.success,
+                            "User has to pay : 5000\$ ", "Session Closed");
+                      },
+                      title: "Finish Session",
+                      btnColor: Colors.green,
                       borderRadius: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(7.0)),
                     ),
