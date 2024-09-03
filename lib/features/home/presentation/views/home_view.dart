@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:game_store/core/functions/build_add_modal_bottom.dart';
 import 'package:game_store/features/home/presentation/views/widgets/home_body.dart';
 
 class HomeView extends StatelessWidget {
@@ -8,8 +9,15 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: const HomeViewBody(),
-      floatingActionButton:
-          FloatingActionButton(onPressed: () {}, child: Icon(Icons.add)),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          buildAddDeviceModalBottom(context);
+        },
+        child: Icon(
+          Icons.add,
+          color: Theme.of(context).colorScheme.background,
+        ),
+      ),
     );
   }
 }

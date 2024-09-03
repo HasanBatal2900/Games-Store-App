@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:game_store/core/theme/themes.dart';
 import 'package:game_store/router/app_router.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class GameStoreApp extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
-      theme: ThemeData(useMaterial3: true),
+      theme: lightTheme,
     );
   }
 }

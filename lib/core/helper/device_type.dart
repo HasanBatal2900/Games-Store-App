@@ -39,6 +39,7 @@ Widget getDeviceIconByName(String type) {
     case "pc":
       return const Icon(
         FontAwesomeIcons.laptop,
+        size: 18,
         color: Colors.indigo,
       );
 
