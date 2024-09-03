@@ -28,7 +28,7 @@ class HomeViewBody extends StatelessWidget {
               itemCount: 10,
               itemBuilder: (context, index) => DeviceCard(
                 device: DeviceEntity(
-                  name: "pc1",
+                  deviceName: "pc1",
                   priceHour: 5600,
                   type: "pc",
                   status: true,

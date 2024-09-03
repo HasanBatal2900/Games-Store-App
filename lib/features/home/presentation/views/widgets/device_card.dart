@@ -47,7 +47,7 @@ class DeviceCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    device.name,
+                    device.deviceName,
                     style: Styles.textStyle16.copyWith(
                       fontWeight: FontWeight.bold,
                       color: kPrimaryColor,
