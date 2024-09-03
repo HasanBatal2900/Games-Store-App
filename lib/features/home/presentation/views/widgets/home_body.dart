@@ -20,19 +20,21 @@ class HomeViewBody extends StatelessWidget {
           ),
           Expanded(
             child: ListView.separated(
-                separatorBuilder: (context, index) => SizedBox(
-                      child: Divider(
-                        color: Colors.grey.shade300,
-                      ),
-                    ),
-                itemCount: 10,
-                itemBuilder: (context, index) => DeviceCard(
-                      device: DeviceEntity(
-                          name: "pc1",
-                          priceHour: 5600,
-                          type: "pc",
-                          status: false),
-                    )),
+              separatorBuilder: (context, index) => SizedBox(
+                child: Divider(
+                  color: Colors.grey.shade300,
+                ),
+              ),
+              itemCount: 10,
+              itemBuilder: (context, index) => DeviceCard(
+                device: DeviceEntity(
+                  name: "pc1",
+                  priceHour: 5600,
+                  type: "pc",
+                  status: true,
+                ),
+              ),
+            ),
           ),
         ],
       ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:game_store/core/functions/build_add_modal_bottom.dart';
+import 'package:game_store/core/helper/modals/build_add_modal_bottom.dart';
 import 'package:game_store/features/home/presentation/views/widgets/home_body.dart';
 
 class HomeView extends StatelessWidget {
