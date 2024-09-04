@@ -1,4 +1,4 @@
-import 'package:game_store/features/home/domain/entities/user.dart';
+import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 
 var uuid = const Uuid();
@@ -19,4 +19,11 @@ class DeviceEntity {
       this.user,
       })
       : serialId = uuid.v4();
+}
+
+class User {
+  final String name;
+  final TimeOfDay beginTime;
+
+  User({required this.name, required this.beginTime});
 }
