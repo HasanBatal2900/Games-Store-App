@@ -6,7 +6,7 @@ import 'package:game_store/features/home/domain/usecases/add_device_usecase.dart
 import 'package:game_store/features/home/domain/usecases/delete_device_usecase.dart';
 import 'package:game_store/features/home/domain/usecases/get_all_device_usecase.dart';
 import 'package:game_store/features/home/domain/usecases/update_device_usecase.dart';
-import 'package:game_store/features/home/presentation/blocs/home_cubit/device_state.dart';
+import 'package:game_store/features/home/presentation/blocs/home_bloc/device_state.dart';
 
 class DeviceCubit extends Cubit<DeviceState> {
   final AddDeviceUsecase addDeviceUsecase;

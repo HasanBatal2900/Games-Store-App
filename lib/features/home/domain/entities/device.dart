@@ -14,7 +14,7 @@ class DeviceEntity {
   @HiveField(1)
   final String serialId;
   @HiveField(2)
-  final double priceHour;
+  final num priceHour;
   @HiveField(3)
   final String type;
   @HiveField(4)
@@ -51,4 +51,23 @@ class DeviceEntity {
   //     userBeginTime: userBeginTime ?? this.userBeginTime,
   //   );
   // }
+
+  DeviceEntity copyWith({
+    String? deviceName,
+    String? serialId,
+    double? priceHour,
+    String? type,
+    bool? status,
+    String? userName,
+    TimeOfDay? userBeginTime,
+  }) {
+    return DeviceEntity(
+      deviceName: deviceName ?? this.deviceName,
+      priceHour: priceHour ?? this.priceHour,
+      type: type ?? this.type,
+      status: status ?? this.status,
+      userName: userName ?? this.userName,
+      userBeginTime: userBeginTime ?? this.userBeginTime,
+    );
+  }
 }

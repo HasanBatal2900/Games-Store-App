@@ -6,7 +6,7 @@ import 'package:game_store/features/home/domain/usecases/delete_device_usecase.d
 import 'package:game_store/features/home/domain/usecases/get_all_device_usecase.dart';
 import 'package:game_store/features/home/domain/usecases/update_device_usecase.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_event.dart';
-import 'package:game_store/features/home/presentation/blocs/home_cubit/device_state.dart';
+import 'package:game_store/features/home/presentation/blocs/home_bloc/device_state.dart';
 
 class DeviceBloc extends Bloc<DeviceEvent, DeviceState> {
   final AddDeviceUsecase addDeviceUsecase;

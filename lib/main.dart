@@ -7,11 +7,11 @@ import 'package:game_store/router/app_router.dart';
 import 'package:hive_flutter/adapters.dart';
 
 void main() async {
-  runApp(const GameStoreApp());
- await setup();
   await Hive.initFlutter();
   Hive.registerAdapter(DeviceEntityAdapter());
-  await Hive.openBox(kDeviceKeyBox);
+  await Hive.openBox<DeviceEntity>(kDeviceKeyBox);
+  await setup();
+  runApp(const GameStoreApp());
 }
 
 class GameStoreApp extends StatelessWidget {

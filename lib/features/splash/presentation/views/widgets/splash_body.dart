@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:game_store/core/constants/strings.dart';
 import 'package:game_store/core/utils/images_app.dart';
+import 'package:game_store/di/service_locator.dart';
 import 'package:game_store/router/app_router.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
@@ -20,17 +21,16 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   void initState() {
     super.initState();
-    playAudio();
+    playAudio(audioPath: kSplashAudioPath);
 
     player.onPlayerComplete.listen((event) {
       GoRouter.of(context).go(AppRouter.kHomeViewRoute);
     });
   }
 
-  Future<void> playAudio() async {
-    player = AudioPlayer();
-
-    await player.play(AssetSource(kAudioPath));
+  Future<void> playAudio({required String audioPath}) async {
+    player = getIt.get<AudioPlayer>();
+    await player.play(AssetSource(audioPath));
   }
 
   @override
