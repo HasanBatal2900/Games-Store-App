@@ -20,15 +20,12 @@ class DeviceCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (device.status) {
-          // build cancel reserve bottomsheet
           buildFinishSessionModalBottomSheet(context,
-              name: "sobhi", startingTime: TimeOfDay.now());
+              name: device.userName!, startingTime: TimeOfDay.now());
         } else {
-          // build  reserve bottomsheet
           buildReseveModalBottomSheet(
             context,
-            onChanged: (text) {},
-            onTimeSelected: (selectedTime) {},
+            device: device,
           );
         }
       },

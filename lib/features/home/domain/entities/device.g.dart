@@ -22,7 +22,7 @@ class DeviceEntityAdapter extends TypeAdapter<DeviceEntity> {
       type: fields[3] as String,
       status: fields[4] as bool,
       userName: fields[5] as String?,
-      userBeginTime: fields[6] as TimeOfDay?,
+      userBeginTime: fields[6] as String?,
     );
   }
 

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:game_store/core/constants/padding.dart';
@@ -17,6 +16,8 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+// TimeOfDay _startTime = TimeOfDay(hour:int.parse(s.split(":")[0]),minute: int.parse(s.split(":")[1]));
+
     return BlocListener<DeviceBloc, DeviceState>(
       listener: (context, state) {
         if (state is DeviceChangedSuccessfulState) {
