@@ -6,7 +6,7 @@ class AddDeviceUsecase {
 
   AddDeviceUsecase({required this.homRepo});
 
-  Future<void> call(DeviceEntity deviceEntity)async {
-     await homRepo.addDevice(deviceEntity);
+  void call(DeviceEntity deviceEntity) {
+      homRepo.addDevice(deviceEntity);
   }
 }

@@ -6,7 +6,7 @@ class UpdateDeviceUsecase {
 
   UpdateDeviceUsecase({required this.homRepo});
 
-  Future<void> call(DeviceEntity newDevice, DeviceEntity oldDevice) async {
-    await homRepo.updateDeviceInfo(newDevice);
+ void call(DeviceEntity newDevice,int index)  {
+     homRepo.updateDeviceInfo(newDevice, index);
   }
 }

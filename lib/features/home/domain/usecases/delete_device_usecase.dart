@@ -1,4 +1,3 @@
-import 'package:game_store/features/home/domain/entities/device.dart';
 import 'package:game_store/features/home/domain/repos/home_repo.dart';
 
 class DeleteDeviceUsecase {
@@ -6,7 +5,7 @@ class DeleteDeviceUsecase {
 
   DeleteDeviceUsecase({required this.homRepo});
 
-  Future<void> call(DeviceEntity deviceEntity) async{
-     await homRepo.deteleDevice(deviceEntity);
+  void call(int index) async {
+    homRepo.deteleDevice(index);
   }
 }
