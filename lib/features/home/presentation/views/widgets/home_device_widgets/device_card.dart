@@ -10,7 +10,10 @@ import 'package:game_store/features/home/presentation/views/widgets/home_device_
 import 'package:gap/gap.dart';
 
 class DeviceCard extends StatelessWidget {
-  const DeviceCard({super.key, required this.device,});
+  const DeviceCard({
+    super.key,
+    required this.device,
+  });
   final DeviceEntity device;
   @override
   Widget build(BuildContext context) {

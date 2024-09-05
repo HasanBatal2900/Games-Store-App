@@ -6,12 +6,10 @@ import 'package:game_store/core/constants/padding.dart';
 import 'package:game_store/core/constants/strings.dart';
 import 'package:game_store/core/helper/modals/build_quick_alret.dart';
 import 'package:game_store/core/utils/styles.dart';
-import 'package:game_store/features/home/domain/entities/device.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_bloc.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_event.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_state.dart';
 import 'package:game_store/features/home/presentation/views/widgets/home_device_widgets/list_of_device.dart';
-import 'package:hive/hive.dart';
 import 'package:quickalert/models/quickalert_type.dart';
 
 class HomeViewBody extends StatefulWidget {
@@ -24,10 +22,6 @@ class HomeViewBody extends StatefulWidget {
 class _HomeViewBodyState extends State<HomeViewBody> {
   late AudioPlayer player;
   @override
-  void dispose() {
-    Hive.box<DeviceEntity>(kDeviceKeyBox).close();
-    super.dispose();
-  }
 
   @override
   void initState() {

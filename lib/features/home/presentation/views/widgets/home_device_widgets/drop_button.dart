@@ -4,16 +4,23 @@ import 'package:game_store/core/utils/styles.dart';
 import 'package:gap/gap.dart';
 
 class DeviceDropButton extends StatefulWidget {
-  const DeviceDropButton({super.key, required this.onchanged});
+  const DeviceDropButton(
+      {super.key, required this.onchanged, this.initialType});
   final Function(String) onchanged;
+  final String? initialType;
   @override
   State<DeviceDropButton> createState() => _DeviceDropButtonState();
 }
 
-String currentValue = "pc";
-List<String> sumbitType = ["pc", "playStation", "xBox"];
-
 class _DeviceDropButtonState extends State<DeviceDropButton> {
+  @override
+  void initState() {
+  super.initState();
+ currentType=  widget.initialType?? "pc";
+  }
+late  String currentType;
+  List<String> sumbitType = ["pc", "playStation", "xBox"];
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -26,7 +33,7 @@ class _DeviceDropButtonState extends State<DeviceDropButton> {
             color: Colors.black,
           ),
         ),
-        value: currentValue,
+        value: currentType,
         items: sumbitType
             .map(
               (type) => DropdownMenuItem(
@@ -51,7 +58,7 @@ class _DeviceDropButtonState extends State<DeviceDropButton> {
         ),
         onChanged: (value) {
           setState(() {
-            currentValue = value!;
+            currentType = value!;
           });
           widget.onchanged(value!);
         },

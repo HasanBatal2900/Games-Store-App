@@ -7,8 +7,8 @@ class EditDeviceView extends StatelessWidget {
   final DeviceEntity device;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: EditDeviceViewBody(),
+    return  Scaffold(
+      body: EditDeviceViewBody(device:device),
     );
   }
 }

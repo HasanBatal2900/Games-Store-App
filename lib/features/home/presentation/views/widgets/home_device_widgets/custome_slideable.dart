@@ -5,10 +5,11 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:game_store/features/home/domain/entities/device.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_bloc.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_event.dart';
+import 'package:game_store/router/app_router.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomSlidable extends StatelessWidget {
-  const CustomSlidable(
-      {super.key, required this.child,required this.device});
+  const CustomSlidable({super.key, required this.child, required this.device});
   final Widget child;
   final DeviceEntity device;
   @override
@@ -43,8 +44,10 @@ class CustomSlidable extends StatelessWidget {
             color: Colors.amber.withOpacity(0.2),
             borderRadius: BorderRadius.circular(12.0),
           ),
-          child:  InkWell(
+          child: InkWell(
             onTap: () {
+              GoRouter.of(context)
+                  .push(AppRouter.kEditViewRoute, extra: device);
             },
             child: Icon(
               Icons.edit,
