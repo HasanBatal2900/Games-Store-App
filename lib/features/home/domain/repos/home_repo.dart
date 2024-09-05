@@ -7,6 +7,6 @@ abstract class HomRepo {
   Future<void> addDevice(DeviceEntity deviceEntity);
   // maybe change to get only the id of the device accroding to the hive package
   Future<void> deteleDevice(DeviceEntity deviceEntity);
-  Future<void> updateDeviceInfo(DeviceEntity newDeviceEntity);
+  Future<void> updateDeviceInfo(DeviceEntity newDevice);
   Future<void> changeDeviceStatus(bool newState, DeviceEntity deviceEntity);
 }

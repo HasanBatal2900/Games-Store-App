@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:uuid/uuid.dart';
 
+part 'device.g.dart';
+
 var uuid = const Uuid();
 
 @HiveType(typeId: 0)
@@ -19,7 +21,7 @@ class DeviceEntity {
   final bool status;
   @HiveField(5)
   final String? userName;
-   @HiveField(6)
+  @HiveField(6)
   final TimeOfDay? userBeginTime;
 
   DeviceEntity({
@@ -30,11 +32,23 @@ class DeviceEntity {
     this.userName,
     this.userBeginTime,
   }) : serialId = uuid.v4();
+
+  // DeviceEntity copyWith({
+  //   String? deviceName,
+  //   String? serialId,
+  //   double? priceHour,
+  //   String? type,
+  //   bool? status,
+  //   String? userName,
+  //   TimeOfDay? userBeginTime,
+  // }) {
+  //   return DeviceEntity(
+  //     deviceName: deviceName ?? this.deviceName,
+  //     priceHour: priceHour ?? this.priceHour,
+  //     type: type ?? this.type,
+  //     status: status ?? this.status,
+  //     userName: userName ?? this.userName,
+  //     userBeginTime: userBeginTime ?? this.userBeginTime,
+  //   );
+  // }
 }
-
-// class User {
-//   final String name;
-//   final TimeOfDay beginTime;
-
-//   User({required this.name, required this.beginTime});
-// }
