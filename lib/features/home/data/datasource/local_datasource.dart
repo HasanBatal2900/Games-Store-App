@@ -6,7 +6,7 @@ abstract class LocalDataSource {
   List<DeviceEntity> getAllDevices();
   void addDevice(DeviceEntity deviceEntity);
   void deteleDevice(DeviceEntity deviceEntity,);
-  void updateDeviceInfo(DeviceEntity newDeviceEntity, int index);
+  void updateDeviceInfo(DeviceEntity newDeviceEntity, DeviceEntity oldDevice);
   // void changeDeviceStatus(bool newState, DeviceEntity deviceEntity);
 }
 
@@ -18,11 +18,16 @@ class LocalDataSourceImp extends LocalDataSource {
 
   @override
   void deteleDevice( DeviceEntity deviceEntity) {
+    int index = getDeviceIndex(deviceEntity);
+    Hive.box<DeviceEntity>(kDeviceKeyBox).deleteAt(index);
+  }
+
+  int getDeviceIndex(DeviceEntity deviceEntity) {
     List<DeviceEntity> devices =
         Hive.box<DeviceEntity>(kDeviceKeyBox).values.toList();
-
-int index=   devices.indexWhere((device) => device.serialId == deviceEntity.serialId);
-    Hive.box<DeviceEntity>(kDeviceKeyBox).deleteAt(index);
+    
+    int index=   devices.indexWhere((device) => device.serialId == deviceEntity.serialId);
+    return index;
   }
 
   @override
@@ -32,7 +37,9 @@ int index=   devices.indexWhere((device) => device.serialId == deviceEntity.seri
   }
 
   @override
-  void updateDeviceInfo(DeviceEntity newDeviceEntity, int index) {
+  void updateDeviceInfo(DeviceEntity newDeviceEntity, DeviceEntity oldDevice) {
+    int index =getDeviceIndex(oldDevice);
     Hive.box<DeviceEntity>(kDeviceKeyBox).putAt(index, newDeviceEntity);
+
   }
 }

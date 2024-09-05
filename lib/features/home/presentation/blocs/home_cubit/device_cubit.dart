@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:game_store/core/constants/strings.dart';
 import 'package:game_store/features/home/domain/entities/device.dart';
 
 import 'package:game_store/features/home/domain/usecases/add_device_usecase.dart';
@@ -23,19 +24,19 @@ class DeviceCubit extends Cubit<DeviceState> {
   void addDevice(DeviceEntity deviceEntity) {
     emit(DeviceLoadingState());
     addDeviceUsecase.call(deviceEntity);
-    emit(DeviceChangedSuccessfulState(message: "Device Added Successfuly"));
+    emit(DeviceChangedSuccessfulState(message:kAddDeviceSucessMessage));
   }
 
   void deleteDevice(int index,DeviceEntity deviceEntity) {
     emit(DeviceLoadingState());
     deleteDeviceUsecase.call(deviceEntity);
-    emit(DeviceChangedSuccessfulState(message: "Device Deleted Successfuly"));
+    emit(DeviceChangedSuccessfulState(message:kDeleteDeviceSucessMessage));
   }
 
-  void upadteDevice(DeviceEntity deviceEntity, int index) {
+  void upadteDevice(DeviceEntity deviceEntity, DeviceEntity oldDevice) {
     emit(DeviceLoadingState());
-    updateDeviceUsecase.call(deviceEntity, index);
-    emit(DeviceChangedSuccessfulState(message: "Device Added Successfuly"));
+    updateDeviceUsecase.call(deviceEntity, oldDevice);
+    emit(DeviceChangedSuccessfulState(message:kUpdateDeviceSucessMessage));
   }
 
   void getAllDevice(DeviceEntity deviceEntity) {

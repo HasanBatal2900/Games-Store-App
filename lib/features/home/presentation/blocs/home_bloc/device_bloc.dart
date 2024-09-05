@@ -34,7 +34,7 @@ class DeviceBloc extends Bloc<DeviceEvent, DeviceState> {
         emit(DeviceFetchedSuccessfulState(deviceList: deviceList));
       } else if (event is UpdateDeviceEvent) {
         emit(DeviceLoadingState());
-        updateDeviceUsecase.call(event.newDevice, event.index);
+        updateDeviceUsecase.call(event.newDevice, event.oldDevice);
         emit(DeviceChangedSuccessfulState(message: kUpdateDeviceSucessMessage));
       }
     });

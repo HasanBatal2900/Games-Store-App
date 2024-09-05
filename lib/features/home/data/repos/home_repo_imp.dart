@@ -22,7 +22,7 @@ class HomeRepoImp extends HomRepo {
   }
 
   @override
-  void updateDeviceInfo(DeviceEntity newDevice, int index) {
-    localDataSourceImp.updateDeviceInfo(newDevice, index);
+  void updateDeviceInfo(DeviceEntity newDevice, DeviceEntity oldDevice) {
+    localDataSourceImp.updateDeviceInfo(newDevice, oldDevice);
   }
 }

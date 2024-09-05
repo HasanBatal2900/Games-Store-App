@@ -6,7 +6,7 @@ class UpdateDeviceUsecase {
 
   UpdateDeviceUsecase({required this.homRepo});
 
- void call(DeviceEntity newDevice,int index)  {
-     homRepo.updateDeviceInfo(newDevice, index);
+ void call(DeviceEntity newDevice,DeviceEntity oldDevice)  {
+     homRepo.updateDeviceInfo(newDevice, oldDevice);
   }
 }

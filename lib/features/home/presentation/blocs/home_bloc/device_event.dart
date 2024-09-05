@@ -15,7 +15,7 @@ class DeleteDeviceEvent extends DeviceEvent {
 class GetAllDeviceEvent extends DeviceEvent {}
 
 class UpdateDeviceEvent extends DeviceEvent {
-  UpdateDeviceEvent({required this.index, required this.newDevice});
-  final int index;
+  UpdateDeviceEvent({required this.oldDevice, required this.newDevice});
+  final DeviceEntity oldDevice;
   final DeviceEntity newDevice;
 }
