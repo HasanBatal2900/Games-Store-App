@@ -5,9 +5,9 @@ import 'package:hive/hive.dart';
 abstract class LocalDataSource {
   List<DeviceEntity> getAllDevices();
   void addDevice(DeviceEntity deviceEntity);
-  void deteleDevice(DeviceEntity deviceEntity);
-  void updateDeviceInfo(DeviceEntity newDeviceEntity);
-  void changeDeviceStatus(bool newState, DeviceEntity deviceEntity);
+  void deteleDevice(int index);
+  void updateDeviceInfo(DeviceEntity newDeviceEntity, int index);
+  // void changeDeviceStatus(bool newState, DeviceEntity deviceEntity);
 }
 
 class LocalDataSourceImp extends LocalDataSource {
@@ -17,27 +17,8 @@ class LocalDataSourceImp extends LocalDataSource {
   }
 
   @override
-  void changeDeviceStatus(bool newState, DeviceEntity deviceEntity) {
-    int index = getIDevicendex(deviceEntity);
-
-    DeviceEntity updatedDevice = DeviceEntity(
-        deviceName: deviceEntity.deviceName,
-        priceHour: deviceEntity.priceHour,
-        type: deviceEntity.type,
-        status: newState,
-        userBeginTime: deviceEntity.userBeginTime,
-        userName: deviceEntity.userName);
-    Hive.box(kDeviceKeyBox).putAt(index, updatedDevice);
-  }
-
-  @override
-  void deteleDevice(DeviceEntity deviceEntity) {
-    List<DeviceEntity> devices =
-        Hive.box<DeviceEntity>(kDeviceKeyBox).values.toList();
-
-    devices.remove(deviceEntity);
-
-    // Hive.box<DeviceEntity>(kDeviceKeyBox).put(kDeviceKeyBox,devices);
+  void deteleDevice(int index) {
+    Hive.box<DeviceEntity>(kDeviceKeyBox).deleteAt(index);
   }
 
   @override
@@ -47,16 +28,8 @@ class LocalDataSourceImp extends LocalDataSource {
   }
 
   @override
-  void updateDeviceInfo(DeviceEntity newDeviceEntity) {
-    int index = getIDevicendex(newDeviceEntity);
+  void updateDeviceInfo(DeviceEntity newDeviceEntity,int index) {
     Hive.box<DeviceEntity>(kDeviceKeyBox).putAt(index, newDeviceEntity);
   }
-
-  int getIDevicendex(DeviceEntity newDeviceEntity) {
-    List<DeviceEntity> devices =
-        Hive.box<DeviceEntity>(kDeviceKeyBox).values.toList();
-    int index = devices
-        .indexWhere((element) => element.serialId == newDeviceEntity.serialId);
-    return index;
-  }
 }
+
