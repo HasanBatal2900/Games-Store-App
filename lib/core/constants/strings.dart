@@ -1,4 +1,5 @@
-const kAudioPath = "audios/start.mp3";
+const kSplashAudioPath = "audios/start.mp3";
+const kScucessAudioPath = "audios/success.mp3";
 const kDeviceKeyBox = "deviceKeyBox";
 const kEmptyCacheErrorMessage = "There is no Data right Now";
 const kAddDeviceSucessMessage = 'Device Added Successfuly';
