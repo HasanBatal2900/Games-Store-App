@@ -1,9 +1,9 @@
 
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:game_store/core/constants/padding.dart';
 import 'package:game_store/core/constants/strings.dart';
+import 'package:game_store/core/functions/play_audio_effect.dart';
 import 'package:game_store/core/helper/modals/build_quick_alret.dart';
 import 'package:game_store/core/utils/styles.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_bloc.dart';
@@ -12,29 +12,15 @@ import 'package:game_store/features/home/presentation/blocs/home_bloc/device_sta
 import 'package:game_store/features/home/presentation/views/widgets/home_device_widgets/list_of_device.dart';
 import 'package:quickalert/models/quickalert_type.dart';
 
-class HomeViewBody extends StatefulWidget {
+class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
-
-  @override
-  State<HomeViewBody> createState() => _HomeViewBodyState();
-}
-
-class _HomeViewBodyState extends State<HomeViewBody> {
-  late AudioPlayer player;
-  @override
-
-  @override
-  void initState() {
-    super.initState();
-    player = AudioPlayer();
-  }
 
   @override
   Widget build(BuildContext context) {
     return BlocListener<DeviceBloc, DeviceState>(
       listener: (context, state) {
         if (state is DeviceChangedSuccessfulState) {
-          player.play(AssetSource(kScucessAudioPath));
+          playAssetAudioEffect(audioPath: kScucessAudioPath);
           buildQuickAlret(
             context,
             QuickAlertType.success,

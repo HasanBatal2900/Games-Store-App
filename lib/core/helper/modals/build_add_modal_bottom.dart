@@ -13,7 +13,7 @@ import 'package:gap/gap.dart';
 buildAddDeviceModalBottom(BuildContext context) {
   String devicetype="pc";
   String? deviceName;
-  num priceHour = 0;
+  double priceHour = 0;
   GlobalKey<FormState> formkey = GlobalKey();
   showModalBottomSheet(
     isScrollControlled: true,

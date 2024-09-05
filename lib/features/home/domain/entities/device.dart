@@ -14,7 +14,7 @@ class DeviceEntity {
   @HiveField(1)
   final String? serialId;
   @HiveField(2)
-  final num priceHour;
+  final double priceHour;
   @HiveField(3)
   final String type;
   @HiveField(4)
