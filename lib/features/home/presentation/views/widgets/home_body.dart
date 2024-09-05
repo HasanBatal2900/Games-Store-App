@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,18 +23,25 @@ class HomeViewBody extends StatefulWidget {
 }
 
 class _HomeViewBodyState extends State<HomeViewBody> {
- late AudioPlayer player;
+  DeviceEntity de1 = DeviceEntity(
+      deviceName: "deviceName", priceHour: 100, type: "type", status: false);
+  late DeviceEntity de2;
+  late AudioPlayer player;
   @override
   void dispose() {
     Hive.box<DeviceEntity>(kDeviceKeyBox).close();
     super.dispose();
   }
-@override
+
+  @override
   void initState() {
-     super.initState();
-   player = AudioPlayer();
-  
+    super.initState();
+    player = AudioPlayer();
+    de2 = de1.copyWith();
+    log("de1 Serial :"+ de1.serialId.toString());
+    log("de2 Serial :"+ de2.serialId.toString());
   }
+
   @override
   Widget build(BuildContext context) {
     return BlocListener<DeviceBloc, DeviceState>(
@@ -40,8 +49,12 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         if (state is DeviceChangedSuccessfulState) {
           // GoRouter.of(context).pop();
           player.play(AssetSource(kScucessAudioPath));
-          buildQuickAlret(context, QuickAlertType.success, state.message,
-              "Your order done successfuly",);
+          buildQuickAlret(
+            context,
+            QuickAlertType.success,
+            state.message,
+            "Your order done successfuly",
+          );
           BlocProvider.of<DeviceBloc>(context).add(GetAllDeviceEvent());
         }
       },
