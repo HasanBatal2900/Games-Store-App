@@ -7,7 +7,7 @@ import 'package:game_store/core/widgets/submit_btn.dart';
 import 'package:game_store/features/home/domain/entities/device.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_bloc.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_event.dart';
-import 'package:game_store/features/home/presentation/views/widgets/drop_button.dart';
+import 'package:game_store/features/home/presentation/views/widgets/home_device_widgets/drop_button.dart';
 import 'package:gap/gap.dart';
 
 buildAddDeviceModalBottom(BuildContext context) {

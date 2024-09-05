@@ -5,7 +5,7 @@ import 'package:game_store/core/utils/styles.dart';
 import 'package:game_store/features/home/domain/entities/device.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_bloc.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_state.dart';
-import 'package:game_store/features/home/presentation/views/widgets/device_card.dart';
+import 'package:game_store/features/home/presentation/views/widgets/home_device_widgets/device_card.dart';
 
 class DeviceListView extends StatelessWidget {
   const DeviceListView({super.key});

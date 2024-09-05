@@ -6,7 +6,7 @@ import 'package:game_store/core/helper/modals/build_reserve_modal_bottom.dart';
 import 'package:game_store/core/helper/device_type.dart';
 import 'package:game_store/core/utils/styles.dart';
 import 'package:game_store/features/home/domain/entities/device.dart';
-import 'package:game_store/features/home/presentation/views/widgets/custome_slideable.dart';
+import 'package:game_store/features/home/presentation/views/widgets/home_device_widgets/custome_slideable.dart';
 import 'package:gap/gap.dart';
 
 class DeviceCard extends StatelessWidget {

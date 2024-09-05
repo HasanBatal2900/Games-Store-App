@@ -43,7 +43,9 @@ class CustomSlidable extends StatelessWidget {
             color: Colors.amber.withOpacity(0.2),
             borderRadius: BorderRadius.circular(12.0),
           ),
-          child: const InkWell(
+          child:  InkWell(
+            onTap: () {
+            },
             child: Icon(
               Icons.edit,
               color: Colors.amber,

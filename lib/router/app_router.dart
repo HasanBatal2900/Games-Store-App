@@ -1,5 +1,7 @@
 // import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:game_store/core/helper/navigation.dart';
+import 'package:game_store/features/home/domain/entities/device.dart';
+import 'package:game_store/features/home/presentation/views/edit_device_view.dart';
 // import 'package:game_store/di/service_locator.dart';
 // import 'package:game_store/features/home/domain/usecases/add_device_usecase.dart';
 // import 'package:game_store/features/home/domain/usecases/delete_device_usecase.dart';
@@ -13,6 +15,7 @@ import 'package:go_router/go_router.dart';
 
 class AppRouter {
   static String kHomeViewRoute = '/homeViewRoute';
+  static String kEditViewRoute = "/editViewRoute";
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -22,20 +25,27 @@ class AppRouter {
       GoRoute(
         path: kHomeViewRoute,
         pageBuilder: (context, state) => ScaleNavigation(
-          screen: 
-          // BlocProvider<DeviceBloc>(
-          //   create: (context) => DeviceBloc(
-          //     addDeviceUsecase: getIt.get<AddDeviceUsecase>(),
-          //     deleteDeviceUsecase: getIt.get<DeleteDeviceUsecase>(),
-          //     updateDeviceUsecase: getIt.get<UpdateDeviceUsecase>(),
-          //     getAllDeviceUsecase: getIt.get<GetAllDeviceUsecase>(),
-          //   )..add(GetAllDeviceEvent()),
-          //   child:
-            
-             const HomeView(),
+          screen:
+              // BlocProvider<DeviceBloc>(
+              //   create: (context) => DeviceBloc(
+              //     addDeviceUsecase: getIt.get<AddDeviceUsecase>(),
+              //     deleteDeviceUsecase: getIt.get<DeleteDeviceUsecase>(),
+              //     updateDeviceUsecase: getIt.get<UpdateDeviceUsecase>(),
+              //     getAllDeviceUsecase: getIt.get<GetAllDeviceUsecase>(),
+              //   )..add(GetAllDeviceEvent()),
+              //   child:
+
+              const HomeView(),
           // ),
         ),
-      )
+      ),
+      GoRoute(
+          path: kEditViewRoute,
+          pageBuilder: (context, state) {
+            var param = state.extra as DeviceEntity;
+
+            return SlideNavigation(screen:  EditDeviceView(device:param));
+          }),
     ],
   );
 }
