@@ -7,7 +7,7 @@ import 'package:game_store/features/home/domain/usecases/update_device_usecase.d
 import 'package:get_it/get_it.dart';
 
 GetIt getIt = GetIt.instance;
-void setup() async {
+ setup() async {
   getIt.registerSingleton<LocalDataSourceImp>(LocalDataSourceImp());
   getIt.registerSingleton<HomeRepoImp>(
       HomeRepoImp(localDataSourceImp: getIt.get<LocalDataSourceImp>()));

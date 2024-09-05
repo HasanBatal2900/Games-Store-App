@@ -8,7 +8,7 @@ import 'package:hive_flutter/adapters.dart';
 
 void main() async {
   runApp(const GameStoreApp());
-  setup();
+ await setup();
   await Hive.initFlutter();
   Hive.registerAdapter(DeviceEntityAdapter());
   await Hive.openBox(kDeviceKeyBox);
