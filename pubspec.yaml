@@ -87,5 +87,21 @@ flutter:
     - family: Marah
       fonts:
         - asset: fonts/Marhey.ttf
+    - family: Poppins-reg
+      fonts:
+        - asset: fonts/Poppins-Regular.ttf
+    - family: Poppins-bold
+      fonts:
+        - asset: fonts/Poppins-Bold.ttf
+
+    - family: Robo
+      fonts:
+        - asset: fonts/Robot.ttf
+    - family: OpenSans
+      fonts:
+        - asset: fonts/OpenSans-Regular.ttf
+    - family: Perma
+      fonts:
+        - asset: fonts/perma.ttf     
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
