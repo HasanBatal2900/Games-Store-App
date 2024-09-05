@@ -2,14 +2,15 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:game_store/features/home/domain/entities/device.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_bloc.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_event.dart';
 
 class CustomSlidable extends StatelessWidget {
   const CustomSlidable(
-      {super.key, required this.child, required this.deviceIndex});
+      {super.key, required this.child,required this.device});
   final Widget child;
-  final int deviceIndex;
+  final DeviceEntity device;
   @override
   Widget build(BuildContext context) {
     return Slidable(
@@ -26,7 +27,7 @@ class CustomSlidable extends StatelessWidget {
             child: InkWell(
               onTap: () {
                 BlocProvider.of<DeviceBloc>(context)
-                    .add(DeleteDeviceEvent(index: deviceIndex));
+                    .add(DeleteDeviceEvent(device: device));
               },
               child: const Icon(
                 Icons.delete_outline_rounded,

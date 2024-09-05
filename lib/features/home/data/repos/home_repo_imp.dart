@@ -12,8 +12,8 @@ class HomeRepoImp extends HomRepo {
   }
 
   @override
-  void deteleDevice(int index) {
-    localDataSourceImp.deteleDevice(index);
+  void deteleDevice(DeviceEntity device) {
+    localDataSourceImp.deteleDevice(device);
   }
 
   @override

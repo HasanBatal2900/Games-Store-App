@@ -10,9 +10,8 @@ import 'package:game_store/features/home/presentation/views/widgets/custome_slid
 import 'package:gap/gap.dart';
 
 class DeviceCard extends StatelessWidget {
-  const DeviceCard({super.key, required this.device, required this.index});
+  const DeviceCard({super.key, required this.device,});
   final DeviceEntity device;
-  final int index;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -31,7 +30,7 @@ class DeviceCard extends StatelessWidget {
         }
       },
       child: CustomSlidable(
-        deviceIndex: index,
+        device: device,
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 6),
           color: Colors.white,

@@ -26,7 +26,7 @@ class DeviceBloc extends Bloc<DeviceEvent, DeviceState> {
         emit(DeviceChangedSuccessfulState(message: kAddDeviceSucessMessage));
       } else if (event is DeleteDeviceEvent) {
         emit(DeviceLoadingState());
-        deleteDeviceUsecase.call(event.index);
+        deleteDeviceUsecase.call(event.device);
         emit(DeviceChangedSuccessfulState(message: kDeleteDeviceSucessMessage));
       } else if (event is GetAllDeviceEvent) {
         emit(DeviceLoadingState());

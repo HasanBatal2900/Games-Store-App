@@ -8,8 +8,8 @@ class AddDeviceEvent extends DeviceEvent {
 }
 
 class DeleteDeviceEvent extends DeviceEvent {
-  DeleteDeviceEvent({required this.index});
-  final int index;
+  DeleteDeviceEvent({required this.device});
+  final DeviceEntity device;
 }
 
 class GetAllDeviceEvent extends DeviceEvent {}

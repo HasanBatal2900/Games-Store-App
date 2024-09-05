@@ -5,7 +5,7 @@ import 'package:hive/hive.dart';
 abstract class LocalDataSource {
   List<DeviceEntity> getAllDevices();
   void addDevice(DeviceEntity deviceEntity);
-  void deteleDevice(int index);
+  void deteleDevice(DeviceEntity deviceEntity,);
   void updateDeviceInfo(DeviceEntity newDeviceEntity, int index);
   // void changeDeviceStatus(bool newState, DeviceEntity deviceEntity);
 }
@@ -17,7 +17,11 @@ class LocalDataSourceImp extends LocalDataSource {
   }
 
   @override
-  void deteleDevice(int index) {
+  void deteleDevice( DeviceEntity deviceEntity) {
+    List<DeviceEntity> devices =
+        Hive.box<DeviceEntity>(kDeviceKeyBox).values.toList();
+
+int index=   devices.indexWhere((device) => device.serialId == deviceEntity.serialId);
     Hive.box<DeviceEntity>(kDeviceKeyBox).deleteAt(index);
   }
 
@@ -28,8 +32,7 @@ class LocalDataSourceImp extends LocalDataSource {
   }
 
   @override
-  void updateDeviceInfo(DeviceEntity newDeviceEntity,int index) {
+  void updateDeviceInfo(DeviceEntity newDeviceEntity, int index) {
     Hive.box<DeviceEntity>(kDeviceKeyBox).putAt(index, newDeviceEntity);
   }
 }
-

@@ -26,9 +26,9 @@ class DeviceCubit extends Cubit<DeviceState> {
     emit(DeviceChangedSuccessfulState(message: "Device Added Successfuly"));
   }
 
-  void deleteDevice(int index) {
+  void deleteDevice(int index,DeviceEntity deviceEntity) {
     emit(DeviceLoadingState());
-    deleteDeviceUsecase.call(index);
+    deleteDeviceUsecase.call(deviceEntity);
     emit(DeviceChangedSuccessfulState(message: "Device Deleted Successfuly"));
   }
 

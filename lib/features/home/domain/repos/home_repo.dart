@@ -4,7 +4,7 @@ abstract class HomRepo {
 List<DeviceEntity> getAllDevices();
   void addDevice(DeviceEntity deviceEntity);
   // maybe change to get only the id of the device accroding to the hive package
-  void deteleDevice(int index);
+  void deteleDevice(DeviceEntity device);
   void updateDeviceInfo(DeviceEntity newDevice,int index );
   // void changeDeviceStatus(bool newState, DeviceEntity newDevice,int index);
 }

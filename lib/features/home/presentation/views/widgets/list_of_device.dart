@@ -27,7 +27,7 @@ class DeviceListView extends StatelessWidget {
               itemCount: devices.length,
               itemBuilder: (context, index) => DeviceCard(
                 device: devices[index],
-                index : index,
+                
               ),
             );
           } else if (state is DeviceFetchedFailureState) {
