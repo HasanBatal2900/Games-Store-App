@@ -48,7 +48,6 @@ dependencies:
   liquid_pull_to_refresh: ^3.0.1
   quickalert: ^1.1.0
   shared_preferences: ^2.2.3
-  shimmer: ^3.0.0
   uuid: ^4.2.2
 
 dev_dependencies:
@@ -106,3 +105,5 @@ flutter:
         - asset: fonts/perma.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  enabled: true
