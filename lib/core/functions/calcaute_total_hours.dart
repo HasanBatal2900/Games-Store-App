@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
-num calcauteTotalHours(TimeOfDay time) {
+double calcauteTotalHours(TimeOfDay time) {
   var nowTime = TimeOfDay.now();
-  num totalhours =
+  double totalhours =
       ((nowTime.hour - time.hour) + ((nowTime.minute - time.minute) / 60.0))
-          .abs();
+          .abs()
+          .roundToDouble();
   return totalhours;
+}
+
+double calcuteTolalPrice(double hours, double hourPrice) {
+  return hours * hourPrice;
 }
