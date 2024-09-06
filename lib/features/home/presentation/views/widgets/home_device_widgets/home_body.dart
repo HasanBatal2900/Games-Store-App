@@ -16,8 +16,6 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-// TimeOfDay _startTime = TimeOfDay(hour:int.parse(s.split(":")[0]),minute: int.parse(s.split(":")[1]));
-
     return BlocListener<DeviceBloc, DeviceState>(
       listener: (context, state) {
         if (state is DeviceChangedSuccessfulState) {

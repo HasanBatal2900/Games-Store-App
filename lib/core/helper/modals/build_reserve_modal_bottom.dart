@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:game_store/core/constants/padding.dart';
 import 'package:game_store/core/functions/timeofday_to_string.dart';
+import 'package:game_store/core/helper/modals/build_price_alret_dialog.dart';
 import 'package:game_store/core/utils/styles.dart';
 import 'package:game_store/core/widgets/submit_btn.dart';
 import 'package:game_store/features/home/domain/entities/device.dart';
@@ -17,6 +18,7 @@ buildReseveModalBottomSheet(BuildContext context,
   String? userName;
   TimeOfDay? selectedTime;
   String? stringSelectedTime;
+  TimeOfDay now = TimeOfDay.now();
   showModalBottomSheet(
     isScrollControlled: true,
     isDismissible: true,
@@ -50,12 +52,11 @@ buildReseveModalBottomSheet(BuildContext context,
                     onPressed: () async {
                       selectedTime = await showTimePicker(
                             context: context,
-                            initialTime: TimeOfDay.now(),
+                            initialTime: now,
                           ) ??
-                          TimeOfDay.now();
+                          TimeOfDay(hour: now.hour + 1, minute: now.minute);
 
-                      stringSelectedTime =
-                          timeOfDayToString(selectedTime!);
+                      stringSelectedTime = timeOfDayToString(selectedTime!);
                       log(stringSelectedTime!);
                     },
                     icon: Icon(
@@ -71,18 +72,24 @@ buildReseveModalBottomSheet(BuildContext context,
                     width: MediaQuery.sizeOf(context).width * .4,
                     child: SubmitButton(
                       onPressed: () {
-                        if (userName != null && stringSelectedTime != null) {
-                          DeviceEntity newDevice = device.copyWith(
-                            userName: userName,
-                            userBeginTime: stringSelectedTime!,
-                            status: true,
-                          );
-                          BlocProvider.of<DeviceBloc>(context).add(
-                            UpdateDeviceEvent(
-                                oldDevice: device, newDevice: newDevice),
-                          );
-                          GoRouter.of(context).pop();
-                          
+                        if ((selectedTime!.hour < TimeOfDay.now().hour ||
+                            (selectedTime!.hour == now.hour &&
+                                selectedTime!.minute < now.minute))) {
+                          buildAlretDialog(context, "Error",
+                              "You have to Choose Another Time");
+                        } else {
+                          if (userName != null && stringSelectedTime != null) {
+                            DeviceEntity newDevice = device.copyWith(
+                              userName: userName,
+                              userBeginTime: stringSelectedTime!,
+                              status: true,
+                            );
+                            BlocProvider.of<DeviceBloc>(context).add(
+                              UpdateDeviceEvent(
+                                  oldDevice: device, newDevice: newDevice),
+                            );
+                            GoRouter.of(context).pop();
+                          }
                         }
                       },
                       title: "Save",

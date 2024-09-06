@@ -68,8 +68,10 @@ buildFinishSessionModalBottomSheet(BuildContext context,
                     child: SubmitButton(
                       onPressed: () {
                         GoRouter.of(context).pop();
-                        buildAlretPriceDialog(
-                            context, deviceEntity.userName!, totalPrice);
+                        buildAlretDialog(
+                            context,
+                            "${deviceEntity.userName!}'s price",
+                            " total price is :$totalPrice");
                         BlocProvider.of<DeviceBloc>(context).add(
                           UpdateDeviceEvent(
                             oldDevice: deviceEntity,
