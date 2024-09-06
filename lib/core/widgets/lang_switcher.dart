@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:game_store/l10n/lang_cubit/lang_cubit.dart';
 
 class LangagueSwitcher extends StatefulWidget {
   const LangagueSwitcher({super.key});
@@ -21,6 +23,7 @@ class _LangagueSwitcherState extends State<LangagueSwitcher> {
         onChanged: (currentValue) {
           setState(() {
             value = currentValue;
+            BlocProvider.of<LangagueCubit>(context).changeLang();
           });
         });
   }

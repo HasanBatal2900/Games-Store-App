@@ -1,4 +1,4 @@
-import 'package:game_store/core/constants/strings.dart';
+import 'package:game_store/core/constants/keys.dart';
 import 'package:game_store/features/home/domain/entities/device.dart';
 import 'package:hive/hive.dart';
 

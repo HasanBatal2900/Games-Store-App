@@ -49,7 +49,7 @@ class AppDrawer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "The Langagues",
+                  S.of(context).langagueTitle,
                   style: Styles.textStyle16.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                     fontFamily: "Robo",

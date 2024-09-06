@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:game_store/core/constants/strings.dart';
+import 'package:game_store/core/constants/keys.dart';
 import 'package:game_store/core/theme/themes.dart';
 import 'package:game_store/di/service_locator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
