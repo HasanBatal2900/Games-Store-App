@@ -1,0 +1,27 @@
+{
+    "homeTitle":"الأجهزة",
+    "editViewTitle":"تعديل معلومات الجهاز",
+    "editDevieNameTextFieldLabel":"تعديل اسم الجهاز",
+    "editDeviePriceTextFieldLabel":"تعديل سعر الساعة",
+    "editButtonTitle":"تعديل",
+     "saveButtonTitle":"حفظ",
+     "editSuccessfulMessage":"تم تعديل المعلومات بنجاح",
+     "generalSuccessMessage":"تم  طلبك بنجاح",
+     "perHour":"بالساعة",
+     "enterNameTextFieldLabel":"اسم المستخدم",
+     "setTimeMessage":"حدد الوقت",
+     "unCorrectSelectedTime":"الوقت غير صحيح",
+      "errorTitle":"خطأ",
+      "hours":"ساعات",
+      "spentTimeTextFieldLabel":"الوقت المنقضي",
+      "yourPriceMessage":"حسابك ",
+      "totalPriceMessage":"المبلغ الكلي هو :",
+      "finishButtonSessionTitle":"إنهاء الجلسة",
+      "settingsTitle":"الإعدادت",
+      "langagueTitle":"اللغات"
+
+
+
+
+
+}

@@ -10,6 +10,7 @@ import 'package:game_store/features/home/presentation/blocs/home_bloc/device_blo
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_event.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_state.dart';
 import 'package:game_store/features/home/presentation/views/widgets/home_device_widgets/list_of_device.dart';
+import 'package:game_store/generated/l10n.dart';
 import 'package:quickalert/models/quickalert_type.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -25,7 +26,7 @@ class HomeViewBody extends StatelessWidget {
             context,
             QuickAlertType.success,
             state.message,
-            "Your order done successfuly",
+            S.of(context).generalSuccessMessage,
           );
           BlocProvider.of<DeviceBloc>(context).add(GetAllDeviceEvent());
         }
@@ -39,7 +40,7 @@ class HomeViewBody extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Devices',
+                  S.of(context).homeTitle,
                   style: Styles.textStyle24.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                   ),

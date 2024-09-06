@@ -10,6 +10,7 @@ import 'package:game_store/core/widgets/submit_btn.dart';
 import 'package:game_store/features/home/domain/entities/device.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_bloc.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_event.dart';
+import 'package:game_store/generated/l10n.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
@@ -36,15 +37,15 @@ buildFinishSessionModalBottomSheet(BuildContext context,
             TextFormField(
               readOnly: true,
               initialValue: deviceEntity.userName,
-              decoration: const InputDecoration(
-                labelText: "User Name",
+              decoration: InputDecoration(
+                labelText: S.of(context).editDevieNameTextFieldLabel,
               ),
             ),
             TextFormField(
               readOnly: true,
-              initialValue: "$totalhours hours",
-              decoration: const InputDecoration(
-                labelText: "Spent Time",
+              initialValue: "$totalhours ${S.of(context).hours}",
+              decoration: InputDecoration(
+                labelText: S.of(context).spentTimeTextFieldLabel,
               ),
             ),
             const Gap(20),
@@ -56,7 +57,7 @@ buildFinishSessionModalBottomSheet(BuildContext context,
                   Expanded(
                     child: SubmitButton(
                       onPressed: () => GoRouter.of(context).pop(),
-                      title: "Cancel",
+                      title: S.of(context).cancelButtonTile,
                       btnColor: Colors.red,
                       borderRadius: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
@@ -70,8 +71,8 @@ buildFinishSessionModalBottomSheet(BuildContext context,
                         GoRouter.of(context).pop();
                         buildAlretDialog(
                             context,
-                            "${deviceEntity.userName!}'s price",
-                            " total price is :$totalPrice");
+                            "${S.of(context).yourPriceMessage} ${deviceEntity.userName!}",
+                            "${S.of(context).totalPriceMessage}$totalPrice");
                         BlocProvider.of<DeviceBloc>(context).add(
                           UpdateDeviceEvent(
                             oldDevice: deviceEntity,
@@ -83,7 +84,7 @@ buildFinishSessionModalBottomSheet(BuildContext context,
                           ),
                         );
                       },
-                      title: "Finish Session",
+                      title: S.of(context).finishButtonSessionTitle,
                       btnColor: Colors.green,
                       borderRadius: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(7.0)),

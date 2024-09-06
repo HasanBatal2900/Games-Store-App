@@ -3,6 +3,7 @@ import 'package:game_store/core/constants/padding.dart';
 import 'package:game_store/core/utils/styles.dart';
 import 'package:game_store/core/widgets/change_btn_theme.dart';
 import 'package:game_store/core/widgets/lang_switcher.dart';
+import 'package:game_store/generated/l10n.dart';
 import 'package:gap/gap.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -17,7 +18,6 @@ class AppDrawer extends StatelessWidget {
         bottomRight: Radius.circular(10.0),
       )),
       backgroundColor: Theme.of(context).colorScheme.background,
-      semanticLabel: "Your Settings",
       width: MediaQuery.sizeOf(context).width * .8,
       elevation: 6.0,
       child: Padding(
@@ -29,7 +29,7 @@ class AppDrawer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Your Settings",
+                  S.of(context).settingsTitle,
                   style: Styles.textStyle20.copyWith(
                     fontFamily: "Robo",
                     color: Theme.of(context).colorScheme.onBackground,

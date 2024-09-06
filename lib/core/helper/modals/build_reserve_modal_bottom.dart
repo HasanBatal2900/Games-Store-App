@@ -10,6 +10,7 @@ import 'package:game_store/core/widgets/submit_btn.dart';
 import 'package:game_store/features/home/domain/entities/device.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_bloc.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_event.dart';
+import 'package:game_store/generated/l10n.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
@@ -37,9 +38,9 @@ buildReseveModalBottomSheet(BuildContext context,
               onChanged: (value) {
                 userName = value;
               },
-              decoration: const InputDecoration(
-                labelText: "User Name",
-                hintText: "Enter user Name",
+              decoration:  InputDecoration(
+                labelText:S.of(context).enterNameTextFieldLabel ,
+                hintText: S.of(context).enterNameTextFieldLabel,
               ),
             ),
             const Gap(20),
@@ -64,7 +65,7 @@ buildReseveModalBottomSheet(BuildContext context,
                       color: Theme.of(context).colorScheme.primary,
                     ),
                     label: Text(
-                      "set Time",
+                      S.of(context).setTimeMessage,
                       style: Styles.textStyle18,
                     ),
                   ),
@@ -75,8 +76,7 @@ buildReseveModalBottomSheet(BuildContext context,
                         if ((selectedTime!.hour < TimeOfDay.now().hour ||
                             (selectedTime!.hour == now.hour &&
                                 selectedTime!.minute < now.minute))) {
-                          buildAlretDialog(context, "Error",
-                              "You have to Choose Another Time");
+                          buildAlretDialog(context,S.of(context).errorTitle ,S.of(context).unCorrectSelectedTime);
                         } else {
                           if (userName != null && stringSelectedTime != null) {
                             DeviceEntity newDevice = device.copyWith(
@@ -92,7 +92,7 @@ buildReseveModalBottomSheet(BuildContext context,
                           }
                         }
                       },
-                      title: "Save",
+                      title: S.of(context).saveButtonTitle,
                       borderRadius: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(7.0)),
                     ),

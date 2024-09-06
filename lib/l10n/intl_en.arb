@@ -1,1 +1,24 @@
-{}
+{
+    "homeTitle":"Devices",
+    "editViewTitle":"Edit Device Info",
+     "editDevieNameTextFieldLabel":"Edit DeviceName",
+     "editDeviePriceTextFieldLabel":"Edit Price hour",
+     "editButtonTitle":"Edit",
+     "saveButtonTitle":"Save",
+     "cancelButtonTile":"cancel",
+     "editSuccessfulMessage":"You have edited the info succcessfuly",
+      "generalSuccessMessage":"Your order done successfuly",
+      "perHour":"per hour",
+      "enterNameTextFieldLabel":"User Name",
+      "setTimeMessage":"Set Time",
+      "unCorrectSelectedTime":"UnCorrect Selected Time",
+      "errorTitle":"Error",
+      "hours":"hours",
+      "spentTimeTextFieldLabel":"Spent Time",
+      "yourPriceMessage":"Your price ",
+      "totalPriceMessage":"total price is :",
+      "finishButtonSessionTitle":"Finish Session",
+      "settingsTitle":"Settings",
+      "langagueTitle":"The Langagues"
+
+}

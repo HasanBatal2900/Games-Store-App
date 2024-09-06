@@ -6,6 +6,7 @@ import 'package:game_store/core/helper/device_type.dart';
 import 'package:game_store/core/utils/styles.dart';
 import 'package:game_store/features/home/domain/entities/device.dart';
 import 'package:game_store/features/home/presentation/views/widgets/home_device_widgets/custome_slideable.dart';
+import 'package:game_store/generated/l10n.dart';
 import 'package:gap/gap.dart';
 
 class DeviceCard extends StatelessWidget {
@@ -57,7 +58,7 @@ class DeviceCard extends StatelessWidget {
                   ),
                   const Gap(5),
                   Text(
-                    "${device.priceHour} per hour",
+                    "${device.priceHour} ${S.of(context).perHour}",
                     style: Styles.textStyle12.copyWith(
                       color: Theme.of(context).colorScheme.background,
                       fontFamily: "Robo",

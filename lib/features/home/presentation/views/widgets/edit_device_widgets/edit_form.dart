@@ -6,6 +6,7 @@ import 'package:game_store/features/home/domain/entities/device.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_bloc.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_event.dart';
 import 'package:game_store/features/home/presentation/views/widgets/home_device_widgets/drop_button.dart';
+import 'package:game_store/generated/l10n.dart';
 import 'package:gap/gap.dart';
 
 class EditDeviceForm extends StatelessWidget {
@@ -32,7 +33,7 @@ class EditDeviceForm extends StatelessWidget {
             initialValue: device.deviceName,
             onChanged: (value) => deviceName = value,
             decoration: buildGeneralInputDecoration(context,
-                label: "Edit DeviceName", hint: "Enter Device Name"),
+                label: S.of(context).editDevieNameTextFieldLabel, hint: S.of(context).editDevieNameTextFieldLabel),
           ),
           const Gap(20),
           TextFormField(
@@ -49,7 +50,7 @@ class EditDeviceForm extends StatelessWidget {
               priceHour = double.parse(value);
             },
             decoration: buildGeneralInputDecoration(context,
-                label: "Edit priceHour", hint: "Enter Price Hour"),
+                label: S.of(context).editDeviePriceTextFieldLabel, hint: S.of(context).editDeviePriceTextFieldLabel),
           ),
           DeviceDropButton(
             initialType: device.type,
@@ -68,7 +69,7 @@ class EditDeviceForm extends StatelessWidget {
                     UpdateDeviceEvent(oldDevice: device, newDevice: newDevice));
               }
             },
-            title: "Edit",
+            title: S.of(context).editButtonTitle,
             borderRadius: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12.0)),
           ),

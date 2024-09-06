@@ -49,6 +49,216 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Devices`
+  String get homeTitle {
+    return Intl.message(
+      'Devices',
+      name: 'homeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Device Info`
+  String get editViewTitle {
+    return Intl.message(
+      'Edit Device Info',
+      name: 'editViewTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit DeviceName`
+  String get editDevieNameTextFieldLabel {
+    return Intl.message(
+      'Edit DeviceName',
+      name: 'editDevieNameTextFieldLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Price hour`
+  String get editDeviePriceTextFieldLabel {
+    return Intl.message(
+      'Edit Price hour',
+      name: 'editDeviePriceTextFieldLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get editButtonTitle {
+    return Intl.message(
+      'Edit',
+      name: 'editButtonTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get saveButtonTitle {
+    return Intl.message(
+      'Save',
+      name: 'saveButtonTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `cancel`
+  String get cancelButtonTile {
+    return Intl.message(
+      'cancel',
+      name: 'cancelButtonTile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have edited the info succcessfuly`
+  String get editSuccessfulMessage {
+    return Intl.message(
+      'You have edited the info succcessfuly',
+      name: 'editSuccessfulMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your order done successfuly`
+  String get generalSuccessMessage {
+    return Intl.message(
+      'Your order done successfuly',
+      name: 'generalSuccessMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `per hour`
+  String get perHour {
+    return Intl.message(
+      'per hour',
+      name: 'perHour',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User Name`
+  String get enterNameTextFieldLabel {
+    return Intl.message(
+      'User Name',
+      name: 'enterNameTextFieldLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set Time`
+  String get setTimeMessage {
+    return Intl.message(
+      'Set Time',
+      name: 'setTimeMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `UnCorrect Selected Time`
+  String get unCorrectSelectedTime {
+    return Intl.message(
+      'UnCorrect Selected Time',
+      name: 'unCorrectSelectedTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error`
+  String get errorTitle {
+    return Intl.message(
+      'Error',
+      name: 'errorTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `hours`
+  String get hours {
+    return Intl.message(
+      'hours',
+      name: 'hours',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spent Time`
+  String get spentTimeTextFieldLabel {
+    return Intl.message(
+      'Spent Time',
+      name: 'spentTimeTextFieldLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your price `
+  String get yourPriceMessage {
+    return Intl.message(
+      'Your price ',
+      name: 'yourPriceMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `total price is :`
+  String get totalPriceMessage {
+    return Intl.message(
+      'total price is :',
+      name: 'totalPriceMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finish Session`
+  String get finishButtonSessionTitle {
+    return Intl.message(
+      'Finish Session',
+      name: 'finishButtonSessionTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settingsTitle {
+    return Intl.message(
+      'Settings',
+      name: 'settingsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The Langagues`
+  String get langagueTitle {
+    return Intl.message(
+      'The Langagues',
+      name: 'langagueTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -57,6 +267,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ar'),
     ];
   }
 

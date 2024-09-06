@@ -45,6 +45,7 @@ class GameStoreApp extends StatelessWidget {
       child: BlocBuilder<ThemeCubit, ThemeData>(
         builder: (context, state) {
           return MaterialApp.router(
+            locale:const Locale("ar"),
             localizationsDelegates:const [
                 S.delegate,
                 GlobalMaterialLocalizations.delegate,

@@ -21,5 +21,37 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "cancelButtonTile": MessageLookupByLibrary.simpleMessage("cancel"),
+        "editButtonTitle": MessageLookupByLibrary.simpleMessage("Edit"),
+        "editDevieNameTextFieldLabel":
+            MessageLookupByLibrary.simpleMessage("Edit DeviceName"),
+        "editDeviePriceTextFieldLabel":
+            MessageLookupByLibrary.simpleMessage("Edit Price hour"),
+        "editSuccessfulMessage": MessageLookupByLibrary.simpleMessage(
+            "You have edited the info succcessfuly"),
+        "editViewTitle":
+            MessageLookupByLibrary.simpleMessage("Edit Device Info"),
+        "enterNameTextFieldLabel":
+            MessageLookupByLibrary.simpleMessage("User Name"),
+        "errorTitle": MessageLookupByLibrary.simpleMessage("Error"),
+        "finishButtonSessionTitle":
+            MessageLookupByLibrary.simpleMessage("Finish Session"),
+        "generalSuccessMessage":
+            MessageLookupByLibrary.simpleMessage("Your order done successfuly"),
+        "homeTitle": MessageLookupByLibrary.simpleMessage("Devices"),
+        "hours": MessageLookupByLibrary.simpleMessage("hours"),
+        "langagueTitle": MessageLookupByLibrary.simpleMessage("The Langagues"),
+        "perHour": MessageLookupByLibrary.simpleMessage("per hour"),
+        "saveButtonTitle": MessageLookupByLibrary.simpleMessage("Save"),
+        "setTimeMessage": MessageLookupByLibrary.simpleMessage("Set Time"),
+        "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
+        "spentTimeTextFieldLabel":
+            MessageLookupByLibrary.simpleMessage("Spent Time"),
+        "totalPriceMessage":
+            MessageLookupByLibrary.simpleMessage("total price is :"),
+        "unCorrectSelectedTime":
+            MessageLookupByLibrary.simpleMessage("UnCorrect Selected Time"),
+        "yourPriceMessage": MessageLookupByLibrary.simpleMessage("Your price ")
+      };
 }

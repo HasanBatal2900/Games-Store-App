@@ -12,6 +12,7 @@ import 'package:game_store/features/home/presentation/blocs/home_bloc/device_blo
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_event.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_state.dart';
 import 'package:game_store/features/home/presentation/views/widgets/edit_device_widgets/edit_form.dart';
+import 'package:game_store/generated/l10n.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quickalert/models/quickalert_type.dart';
@@ -27,7 +28,7 @@ class EditDeviceViewBody extends StatelessWidget {
           GoRouter.of(context).pop();
           playAssetAudioEffect(audioPath: kScucessAudioPath);
           buildQuickAlret(context, QuickAlertType.success, state.message,
-              "You have edited the info succcessfuly");
+              S.of(context).editSuccessfulMessage);
 
           BlocProvider.of<DeviceBloc>(context).add(GetAllDeviceEvent());
         }
@@ -39,7 +40,7 @@ class EditDeviceViewBody extends StatelessWidget {
             children: [
               Center(
                 child: Text(
-                  "Edit Device Info ",
+                  S.of(context).editViewTitle,
                   style: Styles.textStyle24.copyWith(
                     fontFamily: "Robo",
                     fontWeight: FontWeight.bold,
