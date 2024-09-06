@@ -36,7 +36,9 @@ class HomeViewBody extends StatelessWidget {
           children: [
             Text(
               'Devices',
-              style: Styles.textStyle24,
+              style: Styles.textStyle24.copyWith(
+                color: Theme.of(context).colorScheme.onBackground,
+              ),
             ),
             const DeviceListView(),
           ],

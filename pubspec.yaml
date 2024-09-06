@@ -103,6 +103,6 @@ flutter:
         - asset: fonts/OpenSans-Regular.ttf
     - family: Perma
       fonts:
-        - asset: fonts/perma.ttf     
+        - asset: fonts/perma.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

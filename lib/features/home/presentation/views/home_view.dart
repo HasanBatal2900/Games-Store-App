@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:game_store/core/helper/modals/build_add_modal_bottom.dart';
+import 'package:game_store/core/widgets/app_drawer.dart';
 import 'package:game_store/features/home/presentation/views/widgets/home_device_widgets/home_body.dart';
 
 class HomeView extends StatelessWidget {
@@ -8,6 +9,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const AppDrawer(),
       body: const HomeViewBody(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

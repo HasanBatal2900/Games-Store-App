@@ -3,16 +3,23 @@ import 'package:game_store/core/constants/colors.dart';
 
 final lightTheme = ThemeData(
   useMaterial3: true,
-  brightness: Brightness.light,
+  floatingActionButtonTheme: const FloatingActionButtonThemeData(
+    elevation: 6.0,
+    backgroundColor: kPrimaryColor,
+  ),
   primaryColor: kPrimaryColor,
   scaffoldBackgroundColor: Colors.white,
+  drawerTheme: DrawerThemeData(
+    backgroundColor: Colors.white,
+    elevation: 6.0,
+    scrimColor: Colors.black.withOpacity(0.7),
+  ),
+  dividerColor: Colors.black,
   colorScheme: const ColorScheme.light(
     background: Colors.white,
-    brightness: Brightness.light,
     primary: kPrimaryColor,
     onPrimary: Colors.white,
     onBackground: Colors.black,
-    
   ),
   bottomSheetTheme: BottomSheetThemeData(
     backgroundColor: Colors.white,
@@ -30,9 +37,22 @@ final lightTheme = ThemeData(
 
 final darkTheme = ThemeData(
   useMaterial3: true,
-  brightness: Brightness.dark,
-  scaffoldBackgroundColor: Colors.black,
-  colorScheme: ColorScheme.fromSeed(seedColor: kPrimaryColor),
+  floatingActionButtonTheme: const FloatingActionButtonThemeData(
+    elevation: 6.0,
+    backgroundColor: kPrimaryColor,
+  ),
+  scaffoldBackgroundColor: kBackgroundColor,
+  dividerColor: Colors.white,
+  drawerTheme: DrawerThemeData(
+    backgroundColor: Colors.black,
+    elevation: 6.0,
+    scrimColor: Colors.black.withOpacity(0.7),
+  ),
+  colorScheme: const ColorScheme.dark(
+    onBackground: Colors.white,
+    background: kBackgroundColor,
+    primary: kPrimaryColor,
+  ),
   bottomSheetTheme: BottomSheetThemeData(
     backgroundColor: kBackgroundColor.withOpacity(0.7),
     elevation: 6.0,

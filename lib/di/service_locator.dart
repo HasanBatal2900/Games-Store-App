@@ -6,9 +6,11 @@ import 'package:game_store/features/home/domain/usecases/delete_device_usecase.d
 import 'package:game_store/features/home/domain/usecases/get_all_device_usecase.dart';
 import 'package:game_store/features/home/domain/usecases/update_device_usecase.dart';
 import 'package:get_it/get_it.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 GetIt getIt = GetIt.instance;
 setup() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+ getIt.registerSingleton<SharedPreferences>(sharedPreferences);
   getIt.registerSingleton<AudioPlayer>(AudioPlayer());
   getIt.registerSingleton<LocalDataSourceImp>(LocalDataSourceImp());
   getIt.registerSingleton<HomeRepoImp>(

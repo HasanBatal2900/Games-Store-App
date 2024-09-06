@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:game_store/core/constants/colors.dart';
 import 'package:game_store/core/constants/padding.dart';
 import 'package:game_store/core/helper/modals/build_finish_session_modal_bottom.dart';
 import 'package:game_store/core/helper/modals/build_reserve_modal_bottom.dart';
@@ -31,8 +30,11 @@ class DeviceCard extends StatelessWidget {
       child: CustomSlidable(
         device: device,
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 6),
-          color: Colors.white,
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(7.0),
+            color: Theme.of(context).colorScheme.onBackground,
+          ),
           margin:
               const EdgeInsets.symmetric(horizontal: kPaddingHorizontal * .5),
           width: MediaQuery.sizeOf(context).width,
@@ -50,13 +52,17 @@ class DeviceCard extends StatelessWidget {
                     device.deviceName,
                     style: Styles.textStyle16.copyWith(
                       fontWeight: FontWeight.bold,
-                      color: kPrimaryColor,
+                      color: Theme.of(context).colorScheme.background,
                     ),
                   ),
                   const Gap(5),
                   Text(
                     "${device.priceHour} per hour",
-                    style: Styles.textStyle12,
+                    style: Styles.textStyle12.copyWith(
+                      color: Theme.of(context).colorScheme.background,
+                      fontFamily: "Robo",
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
