@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:game_store/core/constants/padding.dart';
 import 'package:game_store/core/utils/styles.dart';
 import 'package:game_store/core/widgets/change_btn_theme.dart';
+import 'package:game_store/core/widgets/lang_switcher.dart';
 import 'package:gap/gap.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -43,13 +44,20 @@ class AppDrawer extends StatelessWidget {
               child: const Divider(thickness: 2),
             ),
             const Gap(20),
-            Text(
-              "The Langague",
-              style: Styles.textStyle16.copyWith(
-                color: Theme.of(context).colorScheme.onBackground,
-                fontFamily: "Robo",
-                fontWeight: FontWeight.bold,
-              ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "The Langagues",
+                  style: Styles.textStyle16.copyWith(
+                    color: Theme.of(context).colorScheme.onBackground,
+                    fontFamily: "Robo",
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const LangagueSwitcher(),
+              ],
             ),
           ],
         ),

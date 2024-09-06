@@ -46,7 +46,7 @@ class _ChangeThemeButtonIconState extends State<ChangeThemeButtonIcon> {
               icon: const Icon(
                 Icons.nightlight_rounded,
                 color: Colors.white,
-                size: 24,
+                size: 28,
               ))
           : IconButton(
               key: const ValueKey(2),
@@ -58,8 +58,8 @@ class _ChangeThemeButtonIconState extends State<ChangeThemeButtonIcon> {
               },
               icon: const Icon(
                 Icons.sunny,
-                color: Colors.white,
-                size: 24,
+                color: Colors.black,
+                size: 28,
               ),
             ),
     );
