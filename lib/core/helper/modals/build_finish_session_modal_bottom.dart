@@ -1,15 +1,21 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:game_store/core/constants/padding.dart';
+import 'package:game_store/core/functions/calcaute_total_hours.dart';
+import 'package:game_store/core/functions/string_to_timeofday.dart';
 import 'package:game_store/core/helper/modals/build_quick_alret.dart';
 import 'package:game_store/core/widgets/submit_btn.dart';
+import 'package:game_store/features/home/domain/entities/device.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quickalert/quickalert.dart';
 
 buildFinishSessionModalBottomSheet(BuildContext context,
-    {required String name, required TimeOfDay startingTime}) {
-  // var nowTime = TimeOfDay.now();
-  startingTime;
+    {required DeviceEntity deviceEntity}) {
+  var startTime = stringToTimeOfDay(time: deviceEntity.userBeginTime!);
+  num totalhours = calcauteTotalHours(startTime);
+  log("Total hours is $totalhours");
   showModalBottomSheet(
     isScrollControlled: true,
     isDismissible: true,
@@ -26,14 +32,14 @@ buildFinishSessionModalBottomSheet(BuildContext context,
           children: [
             TextFormField(
               readOnly: true,
-              initialValue: name,
+              initialValue: deviceEntity.userName,
               decoration: const InputDecoration(
                 labelText: "User Name",
               ),
             ),
             TextFormField(
               readOnly: true,
-              initialValue: "time",
+              initialValue: "$totalhours",
               decoration: const InputDecoration(
                 labelText: "Spent Time",
               ),

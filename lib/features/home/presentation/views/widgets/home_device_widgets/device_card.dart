@@ -20,8 +20,7 @@ class DeviceCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (device.status) {
-          buildFinishSessionModalBottomSheet(context,
-              name: device.userName!, startingTime: TimeOfDay.now());
+          buildFinishSessionModalBottomSheet(context, deviceEntity: device);
         } else {
           buildReseveModalBottomSheet(
             context,

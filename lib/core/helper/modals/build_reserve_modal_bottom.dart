@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:game_store/core/constants/padding.dart';
+import 'package:game_store/core/functions/timeofday_to_string.dart';
 import 'package:game_store/core/utils/styles.dart';
 import 'package:game_store/core/widgets/submit_btn.dart';
 import 'package:game_store/features/home/domain/entities/device.dart';
@@ -53,7 +54,8 @@ buildReseveModalBottomSheet(BuildContext context,
                           ) ??
                           TimeOfDay.now();
 
-                      stringSelectedTime = selectedTime.toString().substring(10,15);
+                      stringSelectedTime =
+                          timeOfDayToString(selectedTime!);
                       log(stringSelectedTime!);
                     },
                     icon: Icon(
@@ -71,12 +73,16 @@ buildReseveModalBottomSheet(BuildContext context,
                       onPressed: () {
                         if (userName != null && stringSelectedTime != null) {
                           DeviceEntity newDevice = device.copyWith(
-                              userName: userName, userBeginTime: stringSelectedTime!);
+                            userName: userName,
+                            userBeginTime: stringSelectedTime!,
+                            status: true,
+                          );
                           BlocProvider.of<DeviceBloc>(context).add(
                             UpdateDeviceEvent(
                                 oldDevice: device, newDevice: newDevice),
                           );
                           GoRouter.of(context).pop();
+                          
                         }
                       },
                       title: "Save",
