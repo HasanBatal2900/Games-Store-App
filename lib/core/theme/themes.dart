@@ -18,7 +18,6 @@ final lightTheme = ThemeData(
   colorScheme: const ColorScheme.light(
     background: Colors.white,
     primary: kPrimaryColor,
-    onPrimary: Colors.white,
     onBackground: Colors.black,
   ),
   bottomSheetTheme: BottomSheetThemeData(
@@ -54,7 +53,8 @@ final darkTheme = ThemeData(
     primary: kPrimaryColor,
   ),
   bottomSheetTheme: BottomSheetThemeData(
-    backgroundColor: kBackgroundColor.withOpacity(0.7),
+    backgroundColor: kBackgroundColor,
+    // .withOpacity(0.7),
     elevation: 6.0,
     shadowColor: Colors.black,
     shape: const RoundedRectangleBorder(

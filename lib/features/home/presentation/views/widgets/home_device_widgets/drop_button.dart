@@ -15,10 +15,11 @@ class DeviceDropButton extends StatefulWidget {
 class _DeviceDropButtonState extends State<DeviceDropButton> {
   @override
   void initState() {
-  super.initState();
- currentType=  widget.initialType?? "pc";
+    super.initState();
+    currentType = widget.initialType ?? "pc";
   }
-late  String currentType;
+
+  late String currentType;
   List<String> sumbitType = ["pc", "playStation", "xBox"];
 
   @override
@@ -30,7 +31,7 @@ late  String currentType;
           border: const UnderlineInputBorder(),
           labelText: "Device type",
           labelStyle: Styles.textStyle14.copyWith(
-            color: Colors.black,
+            color: Theme.of(context).colorScheme.onBackground,
           ),
         ),
         value: currentType,
@@ -43,13 +44,18 @@ late  String currentType;
                   children: [
                     getDeviceIconByName(type),
                     const Gap(10),
-                    Text(type),
+                    Text(
+                      type,
+                      style: Styles.textStyle16.copyWith(
+                        color: Theme.of(context).colorScheme.onBackground,
+                      ),
+                    ),
                   ],
                 ),
               ),
             )
             .toList(),
-        dropdownColor: Colors.white,
+        dropdownColor: Theme.of(context).colorScheme.background,
         alignment: Alignment.center,
         icon: Icon(
           Icons.arrow_drop_down_circle_rounded,
