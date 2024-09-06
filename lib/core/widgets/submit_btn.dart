@@ -32,7 +32,7 @@ class SubmitButton extends StatelessWidget {
           title,
           style: style ??
               Styles.textStyle16.copyWith(
-                color: Theme.of(context).colorScheme.background,
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
         ),

@@ -5,6 +5,7 @@ import 'package:game_store/core/constants/strings.dart';
 import 'package:game_store/core/functions/play_audio_effect.dart';
 import 'package:game_store/core/helper/modals/build_quick_alret.dart';
 import 'package:game_store/core/utils/styles.dart';
+import 'package:game_store/core/widgets/open_drawer_btn.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_bloc.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_event.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_state.dart';
@@ -34,11 +35,17 @@ class HomeViewBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Devices',
-              style: Styles.textStyle24.copyWith(
-                color: Theme.of(context).colorScheme.onBackground,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Devices',
+                  style: Styles.textStyle24.copyWith(
+                    color: Theme.of(context).colorScheme.onBackground,
+                  ),
+                ),
+                const OpenDrawerButton(),
+              ],
             ),
             const DeviceListView(),
           ],
