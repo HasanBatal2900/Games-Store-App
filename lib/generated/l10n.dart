@@ -259,6 +259,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Can"t be empty`
+  String get emptyTextFieldError {
+    return Intl.message(
+      'Can"t be empty',
+      name: 'emptyTextFieldError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

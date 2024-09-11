@@ -8,6 +8,7 @@ import 'package:game_store/features/home/domain/entities/device.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_bloc.dart';
 import 'package:game_store/features/home/presentation/blocs/home_bloc/device_event.dart';
 import 'package:game_store/features/home/presentation/views/widgets/home_device_widgets/drop_button.dart';
+import 'package:game_store/generated/l10n.dart';
 import 'package:gap/gap.dart';
 
 buildAddDeviceModalBottom(BuildContext context) {
@@ -38,7 +39,7 @@ buildAddDeviceModalBottom(BuildContext context) {
                   TextFormField(
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return "Name Can't be empty";
+                return S.of(context).emptyTextFieldError;
                       } else {
                         return null;
                       }
@@ -58,7 +59,7 @@ buildAddDeviceModalBottom(BuildContext context) {
                   TextFormField(
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return "Price Can't be empty";
+                return S.of(context).emptyTextFieldError;
                       } else {
                         return null;
                       }

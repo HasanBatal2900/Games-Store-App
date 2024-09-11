@@ -18,7 +18,8 @@
       "totalPriceMessage":"المبلغ الكلي هو :",
       "finishButtonSessionTitle":"إنهاء الجلسة",
       "settingsTitle":"الإعدادت",
-      "langagueTitle":"اللغات"
+      "langagueTitle":"اللغات",
+      "emptyTextFieldError":"عذراً عليك إدخال قيمة"
 
 
 

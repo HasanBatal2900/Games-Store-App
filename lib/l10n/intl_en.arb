@@ -19,6 +19,7 @@
       "totalPriceMessage":"total price is :",
       "finishButtonSessionTitle":"Finish Session",
       "settingsTitle":"Settings",
-      "langagueTitle":"The Langagues"
+      "langagueTitle":"The Langagues",
+       "emptyTextFieldError":"Can\"t be empty"
 
 }

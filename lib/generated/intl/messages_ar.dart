@@ -31,6 +31,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تم تعديل المعلومات بنجاح"),
         "editViewTitle":
             MessageLookupByLibrary.simpleMessage("تعديل معلومات الجهاز"),
+        "emptyTextFieldError":
+            MessageLookupByLibrary.simpleMessage("عذراً عليك إدخال قيمة"),
         "enterNameTextFieldLabel":
             MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "errorTitle": MessageLookupByLibrary.simpleMessage("خطأ"),

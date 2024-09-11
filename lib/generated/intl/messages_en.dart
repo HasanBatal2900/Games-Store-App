@@ -32,6 +32,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "You have edited the info succcessfuly"),
         "editViewTitle":
             MessageLookupByLibrary.simpleMessage("Edit Device Info"),
+        "emptyTextFieldError":
+            MessageLookupByLibrary.simpleMessage("Can\"t be empty"),
         "enterNameTextFieldLabel":
             MessageLookupByLibrary.simpleMessage("User Name"),
         "errorTitle": MessageLookupByLibrary.simpleMessage("Error"),

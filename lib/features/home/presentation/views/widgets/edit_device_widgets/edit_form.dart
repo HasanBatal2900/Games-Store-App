@@ -25,7 +25,7 @@ class EditDeviceForm extends StatelessWidget {
           TextFormField(
             validator: (value) {
               if (value == null) {
-                return "Can't be empty ";
+                return S.of(context).emptyTextFieldError;
               } else {
                 return null;
               }
@@ -39,7 +39,7 @@ class EditDeviceForm extends StatelessWidget {
           TextFormField(
             validator: (value) {
               if (value == null) {
-                return "Can't be empty ";
+                return S.of(context).emptyTextFieldError;
               } else {
                 return null;
               }
